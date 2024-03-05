@@ -2,13 +2,12 @@
 <h3 align = "center"> Arch Hyprland 配置文件和安装脚本</h3>
 <br>
 
-[English](README_EN.md)
+[English Readme](README_EN.md) | [指南](docs/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)
 
 **感谢原作者JaKooLit !!**
-感兴趣可以加[DC](https://discord.gg/tD4VBc64WS), 作者非常热情, 有bug马上就改了
+感兴趣可以加[DC](https://discord.gg/V2SJ92vbEN), 作者非常热情, 有bug马上就改了
 
 > 适用arch最小安装后执行
->[English Readme](README_EN.md) | [指南](docs/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)<br>
 
 ## ✨ 相对原版的区别:
 

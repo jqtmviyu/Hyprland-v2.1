@@ -2,14 +2,13 @@
 <h3 align = "center"> Arch Hyprland Dotfiles and Script Installer </h3>
 <br>
 
-[Chinese](README.md)
+[Chinese Readme](README.md)|[cheatsheet](docs/cheatsheet_en.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)
 
 
 **Thanks to the original author JaKooLit !!**
-If you are interested, join [DC](https://discord.gg/tD4VBc64WS)
+If you are interested, join [DC](https://discord.gg/V2SJ92vbEN)
 
 > Applicable to arch minimum implementation after installation
-> [cheatsheet](docs/cheatsheet_en.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)<br>
 
 ## ✨ Differences:
 
