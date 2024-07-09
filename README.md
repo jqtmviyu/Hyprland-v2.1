@@ -86,7 +86,7 @@
 - `hyprland`: 
     - 没有检测到N卡: `hyprland`
     - 检测到N卡(不稳定, 建议查看wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
-- `waybar-hyprland-git`: 已安装`waybar`可选择不安装
+- `waybar`: 已安装`waybar`可选择不安装,不再需要`waybar-hyprland-git`
 - `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: gtk主题
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: 文件管理器
 - `bluez` `bluez-utils` `blueman`: 蓝牙

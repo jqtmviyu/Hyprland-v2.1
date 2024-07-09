@@ -87,7 +87,7 @@ If you are interested, join [DC](https://discord.gg/V2SJ92vbEN)
 - `hyprland`: 
     - Nvidia Graphics card detected: `hyprland`
     - if not(Unstable, it is recommended to check the wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
-- `waybar-hyprland-git`: if `waybar` has been installed, You can choose not
+- `waybar`: if `waybar` has been installed, You can choose not
 - `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: Gtk theme
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: File manager
 - `bluez` `bluez-utils` `blueman`: Blue tooth
