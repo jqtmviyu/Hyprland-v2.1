@@ -91,7 +91,7 @@ If you are interested, join [DC](https://discord.gg/V2SJ92vbEN)
 - `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: Gtk theme
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: File manager
 - `bluez` `bluez-utils` `blueman`: Blue tooth
-- `sddm-git` `sddm-catppuccin-git`: Login manager and theme
+- `sddm-git`: Login manager
 - `xdg-desktop-portal-hyprland`: Screenshot and screen sharing needs(eg:obs)
 
 ## Self-installation:

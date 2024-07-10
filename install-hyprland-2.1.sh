@@ -401,8 +401,8 @@ if [[ $install_sddm =~ ^[Yy]$ ]]; then
     fi
   fi
 
-  # Install SDDM and Catppuccin theme
-  printf "${NOTE} Installing SDDM and Catppuccin theme...\n"
+  # Install SDDM and sddm-macos theme
+  printf "${NOTE} Installing SDDM and sddm-macos theme...\n"
   for package in sddm-git; do
     install_package "$package" 2>&1 | tee -a "$LOG"
     if [ $? -ne 0 ]; then
@@ -438,11 +438,17 @@ if [[ $install_sddm =~ ^[Yy]$ ]]; then
     # Set up SDDM
     echo -e "${NOTE} Setting up the login screen."
     sddm_conf_dir=/etc/sddm.conf.d
+    sddm_theme_dir=/usr/share/sddm/themes
     if [ ! -d "$sddm_conf_dir" ]; then
         printf "$CAT - $sddm_conf_dir not found, creating...\n"
         sudo mkdir "$sddm_conf_dir" 2>&1 | tee -a "$LOG"
     fi
-    echo -e "[Theme]\nCurrent=catppuccin" | sudo tee -a "$sddm_conf_dir/10-theme.conf" 2>&1 | tee -a "$LOG"
+    if [ ! -d "$sddm_theme_dir" ]; then
+        printf "$CAT - $sddm_theme_dir not found, creating...\n"
+        sudo mkdir "$sddm_theme_dir" 2>&1 | tee -a "$LOG"
+    fi
+    sudo cp -a config/sddm/ssdm-macos "$sddm_theme_dir/" 2>&1 | tee -a "$LOG"
+    echo -e "[Theme]\nCurrent=sddm-macos" | sudo tee -a "$sddm_conf_dir/10-theme.conf" 2>&1 | tee -a "$LOG"
 
     wayland_sessions_dir=/usr/share/wayland-sessions
     if [ ! -d "$wayland_sessions_dir" ]; then

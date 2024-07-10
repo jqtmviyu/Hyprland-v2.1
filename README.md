@@ -5,7 +5,7 @@
 [English Readme](README_EN.md) | [指南](docs/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)
 
 **感谢原作者JaKooLit !!**
-感兴趣可以加[DC](https://discord.gg/V2SJ92vbEN), 作者非常热情, 有bug马上就改了
+感兴趣可以加[DC](https://discord.gg/V2SJ92vbEN), 原作者一直在更新中
 
 > 适用arch最小安装后执行
 
@@ -90,7 +90,7 @@
 - `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: gtk主题
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: 文件管理器
 - `bluez` `bluez-utils` `blueman`: 蓝牙
-- `sddm-git` `sddm-catppuccin-git`: 登录器和登录器主题
+- `sddm-git`: 登录器, 主题使用`nautik1/sddm-theme-catppuccin-macchiato`修改版
 - `xdg-desktop-portal-hyprland`: 截图和屏幕共享需要
 
 ## 自行安装:
@@ -138,6 +138,6 @@ editor   no
 - 如果是法语键盘, 查看这个[issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
 
 ### ✨ 已知问题:
-- [ ] SDDM 主题未更改成mac样式
+- [x] SDDM 主题未更改成mac样式
 - [ ] fractional scaling breaks swww
 - [ ] cava 模块无法在状态栏工作
