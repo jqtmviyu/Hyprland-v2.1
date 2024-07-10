@@ -270,7 +270,7 @@ for PKG1 in foot swaybg swaylock-effects wofi wlogout mako grim slurp wl-clipboa
     fi
 done
 
-for PKG2 in qt5ct btop jq gvfs gvfs-mtp ffmpegthumbs mpv curl pamixer brightnessctl xdg-user-dirs ristretto swappy mpv network-manager-applet cava gtk4; do
+for PKG2 in qt5ct btop jq gvfs gvfs-mtp ffmpegthumbs mpv curl pamixer brightnessctl xdg-user-dirs ristretto swappy mpv network-manager-applet gtk4; do
     install_package  "$PKG2" 2>&1 | tee -a "$LOG"
     if [ $? -ne 0 ]; then
         echo -e "\e[1A\e[K${ERROR} - $PKG2 install had failed, please check the install.log"
@@ -597,7 +597,7 @@ read -n1 -rep "${CAT} Would you like to copy config and wallpaper files? (y,n)" 
 if [[ $CFG =~ ^[Yy]$ ]]; then
 
 # check for existing config folders and backup
-    for DIR in btop cava hypr foot mako swaylock waybar wlogout wofi
+    for DIR in btop hypr foot mako swaylock waybar wlogout wofi
     do
         DIRPATH=~/.config/$DIR
         if [ -d "$DIRPATH" ]; then
@@ -625,7 +625,6 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     cp -r config/foot ~/.config/ || { echo "Error: Failed to copy foot config files."; exit 1; } 2>&1 | tee -a "$LOG"
     cp -r config/wlogout ~/.config/ || { echo "Error: Failed to copy wlogout config files."; exit 1; } 2>&1 | tee -a "$LOG"
     cp -r config/btop ~/.config/ || { echo "Error: Failed to copy btop config files."; exit 1; } 2>&1 | tee -a "$LOG"
-    cp -r config/cava ~/.config/ || { echo "Error: Failed to copy cava config files."; exit 1; } 2>&1 | tee -a "$LOG"
     mkdir -p ~/Pictures/wallpapers
     cp -r wallpapers ~/Pictures/ && { echo "Copy completed!"; } || { echo "Error: Failed to copy wallpapers."; exit 1; } 2>&1 | tee -a "$LOG"
 else

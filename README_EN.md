@@ -17,7 +17,7 @@ If you are interested, join [DC](https://discord.gg/V2SJ92vbEN)
 1. Chinese README
 1. Add a clipboard manager
 1. Change the area screenshot script
-1. Using macos themes (work in progress ...)
+1. Using macos themes
 1. Delete the Asus driver installation part
 1. Delete the layout I don't like and adjust the dark/light style.
 1. Modify shortcut keys
@@ -55,7 +55,6 @@ If you are interested, join [DC](https://discord.gg/V2SJ92vbEN)
 - `swaylock-effects`: Screen Lock
 - `wlroots`: Wayland compositor library
 - `wlogout`: Logout menu
-- `cava`: Audio Visualization
 - `polkit-kde-agent`: Polkit authentication UI for Plasma
 - `mako`: notifications
 - `grim` `slurp`: Screenshot
@@ -138,6 +137,5 @@ editor   no
 - If it's a French keyboard, check this.[issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
 
 ### ✨ known-issues:
-- [ ] SDDM theme has not been changed to mac style
+- [x] SDDM theme has not been changed to mac style
 - [ ] fractional scaling breaks swww
-- [ ] cava module cannot work in the status bar

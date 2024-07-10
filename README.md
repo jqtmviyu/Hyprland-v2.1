@@ -16,8 +16,8 @@
 1. 中文 README
 1. 添加剪切板管理器
 1. 更改区域截图脚本
-1. 使用macos主题 (进行中...)
-1. 删掉安装脚本中华硕驱动安装部分
+1. 预设黑白两套macos主题
+1. 删掉安装脚本中华硕驱动部分
 1. 删掉不喜欢的布局,调整dark/light样式
 1. 修改快捷键
 
@@ -54,7 +54,6 @@
 - `swaylock-effects`: 屏幕锁定
 - `wlroots`: Wayland合成器库
 - `wlogout`: 注销菜单
-- `cava`: 音频可视化
 - `polkit-kde-agent`: 身份验证
 - `mako`: 通知
 - `grim` `slurp`: 截图
@@ -140,4 +139,3 @@ editor   no
 ### ✨ 已知问题:
 - [x] SDDM 主题未更改成mac样式
 - [ ] fractional scaling breaks swww
-- [ ] cava 模块无法在状态栏工作
