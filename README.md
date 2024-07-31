@@ -41,10 +41,13 @@
 
 ![dark-mode](/static/screenshots/dark-mode.png)
 
+![sddm](/static/screenshots/sddm.jpg)
+
 ## 主题:
 -  窗口: `mojave-gtk-theme-git`
 -  鼠标: `mcmojave-cursors-git`
 -  图标: `mcmojave-circle-icon-theme-git`
+-  登录界面: 仿macos
 
 ## 默认安装:
 - `foot` `wofi`
@@ -137,5 +140,5 @@ editor   no
 - 如果是法语键盘, 查看这个[issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
 
 ### ✨ 已知问题:
-- [x] SDDM 主题未更改成mac样式
+- [x] ~~SDDM 主题未更改成mac样式~~
 - [ ] fractional scaling breaks swww
