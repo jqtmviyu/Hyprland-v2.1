@@ -25,7 +25,7 @@
   "custom/menu",
   "idle_inhibitor",
 	"clock",
-	"wlr/workspaces",
+	"hyprland/workspaces",
   "custom/cycle_wall",
 	"custom/light_dark",
 	],
