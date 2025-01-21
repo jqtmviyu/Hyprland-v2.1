@@ -5,13 +5,13 @@
 PROCESS="hypridle"
 
 if [[ "$1" == "status" ]]; then
-    if pgrep "$PROCESS" >/dev/null; then
+    if pidof "$PROCESS" >/dev/null; then
         echo '{"text": "", "alt": "activated", "tooltip": "idle activated"}'
     else
         echo '{"text": "", "alt": "deactivated", "tooltip": "idle deactivated"}'
     fi
 elif [[ "$1" == "toggle" ]]; then
-    if pgrep "$PROCESS" >/dev/null; then
+    if pidof "$PROCESS" >/dev/null; then
         pkill "$PROCESS" >/dev/null
     else
         hypridle

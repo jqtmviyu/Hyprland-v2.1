@@ -37,11 +37,11 @@ if ! [ -f "$next_wallpaper" ]; then
   next_wallpaper=$(find "${wallpaper_path}/${next_path_param}" -type f -iname "*_${next_mode}.jpg" -print0 | shuf -n1 -z | xargs -0)
 fi
 
-if pgrep swaybg > /dev/null; then
+if pidof swaybg > /dev/null; then
   pkill swaybg
   swaybg -m fill -i ${next_wallpaper} &
 else
-  if ! pgrep swww-daemon > /dev/null; then
+  if ! pidof swww-daemon > /dev/null; then
     swww-daemon &
   fi
   swww img "$next_wallpaper" --transition-fps 30 --transition-type any --transition-duration 3

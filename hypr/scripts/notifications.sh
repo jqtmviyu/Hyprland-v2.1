@@ -2,6 +2,6 @@
 
 CONFIG=~/.config/hypr/mako/config
 
-if ! pgrep mako > /dev/null; then
+if ! pidof mako > /dev/null; then
   mako --config ${CONFIG}
 fi

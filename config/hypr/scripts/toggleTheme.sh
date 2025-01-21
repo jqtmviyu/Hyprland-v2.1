@@ -36,7 +36,7 @@ if ! [ -f "$next_wallpaper" ]; then
   next_wallpaper=$(find "${wallpaper_path}/${next_path_param}" -type f -iname "*_${next_mode}.jpg" -print0 | shuf -n1 -z | xargs -0)
 fi
 
-if pgrep swaybg > /dev/null; then
+if pidof swaybg > /dev/null; then
   pkill swaybg
   swaybg -m fill -i ${next_wallpaper}
 else

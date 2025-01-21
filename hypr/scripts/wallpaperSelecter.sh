@@ -26,7 +26,7 @@ COLORS=~/.config/hypr/wofi/colors
 
 # to check if swaybg is running
 
-if pgrep swaybg > /dev/null; then
+if pidof swaybg > /dev/null; then
   pkill swaybg
 fi
 
@@ -54,7 +54,7 @@ menu() {
   printf "$RANDOM_PIC_NAME"
 }
 
-if ! pgrep swww-daemon > /dev/null; then
+if ! pidof swww-daemon > /dev/null; then
   swww-daemon &
 fi
 
@@ -75,7 +75,7 @@ main() {
 }
 
 # Check if wofi is already running
-if pgrep wofi > /dev/null; then
+if pidof wofi > /dev/null; then
   killall wofi
   exit 0
 else

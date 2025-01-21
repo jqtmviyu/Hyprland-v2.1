@@ -5,14 +5,14 @@ current_wallpaper="$HOME/$($scripts_path/configEnvManage.sh get WALLPAPER_PATH)"
 current_wallpaper_app="$($scripts_path/configEnvManage.sh get WALLPAPER_APP)"
 
 swww_init() {
-  if ! pgrep swww-daemon > /dev/null; then
+  if ! pidof swww-daemon > /dev/null; then
     swww-daemon &
   fi
   swww img "$current_wallpaper" --transition-fps 30 --transition-type any --transition-duration 3
 }
 
 swaybg_init() {
-  if pgrep swaybg > /dev/null; then
+  if pidof swaybg > /dev/null; then
     pkill swaybg
   fi
   swaybg -m fill -i "$current_wallpaper" &
@@ -27,7 +27,7 @@ default() {
 }
 
 toggle() {
-  if pgrep swaybg >/dev/null; then
+  if pidof swaybg >/dev/null; then
     $scripts_path/configEnvManage.sh set WALLPAPER_APP swww
     pkill swaybg
     swww_init

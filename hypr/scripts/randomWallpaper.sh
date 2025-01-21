@@ -18,7 +18,7 @@ change_swaybg() {
 
 change_swww() {
   pkill swaybg
-  if ! pgrep swww-daemon > /dev/null; then
+  if ! pidof swww-daemon > /dev/null; then
     swww-daemon &
   fi
   swww img "$RANDOMPICS" --transition-fps 30 --transition-type any --transition-duration 3
@@ -27,7 +27,7 @@ change_swww() {
 }
 
 change_current() {
-  if pgrep swaybg >/dev/null; then
+  if pidof swaybg >/dev/null; then
     change_swaybg
   else
     change_swww
