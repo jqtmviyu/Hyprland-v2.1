@@ -1,0 +1,308 @@
+{
+  "cpu": {
+    "format": "󰍛 {usage}%",
+    "interval": 1,
+    "format-alt-click": "click",
+    "format-alt": "󰍛 {icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ]
+  },
+  "memory": {
+    "interval": 10,
+    "format": "󰾆 {used:0.1f}G",
+    "format-alt": "󰾆 {percentage}%",
+    "format-alt-click": "click",
+    "tooltip": true,
+    "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+    "on-click-right": "foot --title btop sh -c 'btop'"
+  },
+  "temperature": {
+    "interval": 10,
+    "tooltip": false,
+    "hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
+    //"thermal-zone": 0,
+    "critical-threshold": 82,
+    "format": "{icon} {temperatureC}°C",
+    "format-critical": "{icon} {temperatureC}°C",
+    "format-icons": [
+      ""
+    ],
+    "on-click-right": "foot --title btop sh -c 'btop'"
+  },
+  "disk": {
+    "interval": 30,
+    "path": "/",
+    "format": "󰋊 {percentage_used}%",
+    "tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "clock": {
+    //"format": "{:%I:%M %p}",
+    "format": " {:%H:%M}",
+    "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<b>{}</b>",
+        "days": "<b>{}</b>",
+        "weeks": "<b>W{}</b>",
+        "weekdays": "<b>{}</b>",
+        "today": "<b><u>{}</u></b>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "backlight": {
+    "interval": 2,
+    "align": 0,
+    "rotate": 0,
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-click": "",
+    "on-click-middle": "",
+    "on-click-right": "",
+    "on-update": "",
+    "scroll-step": 10.0,
+    "on-scroll-up": "~/.config/hypr/scripts/brightness.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/brightness.sh --dec",
+    "smooth-scrolling-threshold": 1,
+    "tooltip": false
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": " {icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ],
+      "ignored-sinks": [
+        "Easy Effects Sink"
+      ]
+    },
+    "scroll-step": 5.0,
+    "on-click": "~/.config/hypr/scripts/volume.sh --toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec",
+    "tooltip": false,
+    "smooth-scrolling-threshold": 1
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume} %",
+    "format-source-muted": "",
+    "on-click": "~/.config/hypr/scripts/volume.sh --toggle-mic",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --mic-inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --mic-dec",
+    "tooltip": false,
+    "scroll-step": 5
+  },
+  "battery": {
+    "interval": 60,
+    "align": 0,
+    "rotate": 0,
+    //"bat": "BAT1",
+    //"adapter": "ACAD",
+    "full-at": 100,
+    "design-capacity": false,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-full": "{icon} Full",
+    //"format-good": "",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-time": "{H}h {M}min",
+    "tooltip": true
+  },
+  "wlr/taskbar": {
+    "format": "{icon} {name} ",
+    "icon-size": 16,
+    "all-outputs": false,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "wofi"
+    ]
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{essid}  ",
+    "format-ethernet": "󱘖 Wired",
+    "format-disconnected": "", //An empty format will hide the module.
+    "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-linked": "󱘖 {ifname} (No IP)",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": " Disconnected",
+    "max-length": 50
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": " {device_alias}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": " {device_alias}"
+  },
+  "wireplumber": {
+    "format": "{icon} {volume} %",
+    "format-muted": " Mute",
+    "on-click": "~/.config/hypr/scripts/volume.sh --toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/.config/hypr/scripts/volume.sh --inc",
+    "on-scroll-down": "~/.config/hypr/scripts/volume.sh --dec",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 360,
+    "separate-outputs": true,
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    //"format": "{name}: {icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "sort-by-number": true,
+    "format-icons": {
+      "1": "1  ",
+      "2": "2  ",
+      "3": "3  ",
+      "4": "4  ",
+      "5": "5  ",
+      "6": "6  ",
+      "7": "7  ",
+      "8": "8  ",
+      "9": "9  ",
+      "10": " 10 "
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "custom/updater": {
+    "format": " {}",
+    "return-type": "json",
+    "exec": "~/.config/hypr/scripts/checkupdate.sh",
+    "exec-if": "ping mirrors.ustc.edu.cn -c1",
+    "interval": 3600,
+    "on-click": "foot -T update yay -Syu && notify-send 'The system has been updated'",
+    "on-click-right": "foot -T clean sh -c '~/.config/hypr/scripts/checkupdate.sh clean'",
+    "tooltip": true
+  },
+  "custom/weather": {
+    "format": "{}",
+    "format-alt": "{alt}: {}",
+    "format-alt-click": "click",
+    "interval": 3600,
+    "return-type": "json",
+    "exec": "~/.config/hypr/scripts/weather.sh $(~/.config/hypr/scripts/configEnvManage.sh get WEATHER_CITY)",
+    "exec-if": "ping wttr.in -c1",
+    "tooltip": true
+  },
+  "custom/menu": {
+    "format": "",
+    "exec": "~/.config/hypr/scripts/tooltip.sh 'quickEdit'",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "~/.config/hypr/scripts/quickEdit.sh"
+  },
+  "custom/hypridle": {
+    "format": " {icon} ",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    },
+    "return-type": "json",
+    "escape": true,
+    "exec-on-event": true,
+    "interval": 60,
+    "exec": "~/.config/hypr/scripts/hypridle.sh status",
+    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
+  },
+  "custom/cycle_wall": {
+    "format": "",
+    "exec": "~/.config/hypr/scripts/tooltip.sh 'L:randomWallpaper\rR:toggleWallpaperApp'",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "~/.config/hypr/scripts/randomWallpaper.sh",
+    "on-click-right": "~/.config/hypr/scripts/wallpaper.sh toggle"
+  },
+  "custom/light_dark": {
+    "format": "󰐾",
+    "exec": "~/.config/hypr/scripts/tooltip.sh 'L:dark/light\rR:changeBlur'",
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "~/.config/hypr/scripts/toggleTheme.sh",
+    "on-click-right": "~/.config/hypr/scripts/toggleBlur.sh"
+  },
+  "custom/lock": {
+    "format": "",
+    "on-click": "hyprlock",
+    "tooltip": false
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+  }
+}

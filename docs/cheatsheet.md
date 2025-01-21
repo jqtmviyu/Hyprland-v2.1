@@ -24,6 +24,8 @@
 * Super + L : 锁屏
 * Super + N : 上一个窗口
 * Super + shift + N : 下一个窗口
+* Super + v : 窗口浮动并居中
+* Super + space : 窗口取消浮动
 ------
 * Super + h/j/k/l : 在窗口中移动焦点
 * Super + shift + h/j/k/l : 移动窗口位置
@@ -35,17 +37,6 @@
 ------
 * Super + shift + u : 发送到特殊工作区
 * Super + u : 打开特殊工作区
-
-## 状态栏快捷操作
-
-*  : 鼠标左键 状态栏样式切换；右键 透明度调整；中键 快速查看hyprland配置文件
-*  : 演讲模式(不锁屏不变暗)(实际生效不生效不清楚)
-*  : 左键 检查更新, 鼠标 右键清理垃圾
-*  : 左键 随机壁纸切换；右键 壁纸软件切换；中键 静态壁纸选择；
-* 󰐾 : 黑暗/白天 主题切换
-*  : 锁屏
-*  : 电源选项
-
 
 ## 常见问题
 
@@ -157,3 +148,31 @@ m = backspace
 # 启动
 sudo systemctl start keyd
 ```
+
+### 替换grub为system-boot
+
+参考: https://wiki.archlinux.org/title/systemd-boot
+
+```sh
+sudo bootctl --path=/boot install
+sudo mkdir -p /boot/loader/entries
+sudo vim /boot/loader/entries/arch.conf
+===
+title          Arch Linux
+linux          /vmlinuz-linux
+initrd         /intel-ucode.img
+initrd         /initramfs-linux.img
+options        root=LABEL=myArch rw rootflags=subvol=/@
+===
+
+yay -S systemd-boot-pacman-hook # 自动更新
+
+sudo vim /boot/loader/loader.conf
+===
+default  arch.conf
+timeout 0
+editor   no
+===
+```
+
+- 挂载`btrfs`时可选择强制压缩`compress-force=zstd`

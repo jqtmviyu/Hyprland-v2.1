@@ -2,23 +2,24 @@
 <h3 align = "center"> Arch Hyprland 配置文件和安装脚本</h3>
 <br>
 
-[English Readme](README_EN.md) | [指南](docs/cheatsheet.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)
+[English Readme](README_EN.md)
 
-**感谢原作者JaKooLit !!**
-感兴趣可以加[DC](https://discord.gg/V2SJ92vbEN), 原作者一直在更新中
+**[感谢原作者JaKooLit !!](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)**
 
-> 适用arch最小安装后执行
+> 适用arch最小安装后执行, 中文教程: https://arch.icekylin.online/  
+> 建议使用`system-boot`替换`grub`  
+> 报错很正常, hyprland更新频繁, 配置项会失效, 请多查看wiki
 
 ## ✨ 相对原版的区别:
 
-**几乎没有**, 只是改得更适合自己
+**只是微调, 改得更适合自己**
 
-1. 中文 README
+1. 中文README
 1. 添加剪切板管理器
 1. 更改区域截图脚本
-1. 预设黑白两套macos主题
-1. 删掉安装脚本中华硕驱动部分
-1. 删掉不喜欢的布局,调整dark/light样式
+1. 只保留黑白两套macos主题
+1. 删掉安装脚本华硕驱动部分
+1. 删掉不喜欢的布局
 1. 修改快捷键
 
 ## 重要组件:
@@ -31,11 +32,9 @@
  
 - 启动器 : [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
 
-- 文件管理器(可选): [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
+- 文件管理器: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
 
 ## 展示:
-
-![systeminfo](/static/screenshots/systeminfo.png)
 
 ![light-mode](/static/screenshots/light-mode.png)
 
@@ -50,26 +49,28 @@
 -  登录界面: 仿macos
 
 ## 默认安装:
-- `foot` `wofi`
+- `foot`: 轻量终端
+- `wofi`: 应用启动器
 - `swaybg`: 壁纸
 - `swwww`: 动态壁纸(支持webp gif,不支持mp4)
 - `nwg-look-bin`:  GTK3 设置编辑器(eg:主题设置)
-- `swaylock-effects`: 屏幕锁定
+- `hyprlock`: 屏幕锁定
 - `wlroots`: Wayland合成器库
 - `wlogout`: 注销菜单
-- `polkit-kde-agent`: 身份验证
+- `hyprpolkitagent`: 身份验证
 - `mako`: 通知
 - `grim` `slurp`: 截图
 - `swappy`: 截图处理
-- `wl-clipboard` `cliphist`: 剪切板管理
+- `wl-clipboard` `clipse`: 剪切板管理
 - `brightnessctl`: 笔记本亮度控制(台式不需要)
 - `mpv`: 视频播放
 - `ristretto`: 图片查看
 - `pamixer`: 命令行音量控制
-- `playerctl`: 命令行播放控制
+- `playerctl`: 用来绑定快捷键控制音乐播放
 - `xorg-xwayland`: 兼容x11应用
 - `JetBrainsMono Nerd Font`: 状态栏图标字体
 - `nerd-fonts-sarasa-term`: 中英文字体带图标, 等距更纱黑体
+- `mcmojave-cursors` `mojave-gtk-theme-git`: gtk主题
 - `pipewire` `pipewire-pulse` `pipewire-alsa` `wireplumber` `pavucontrol`: 音频相关
 - `xdg-user-dirs`: 创建常见用户文件夹
 - `btop`: 进程查看
@@ -81,6 +82,8 @@
 - `curl`: 天气脚本使用
 - `jq`: JSON 处理
 - `gtk4`: 兼容chrome/chromium中文输入
+- `hypridle`: 空闲管理器(eg: 进入空闲状态时锁定屏幕/演示模式)
+- `checkupdates-with-aur`: 状态栏检查更新模块
 
 ## 可选安装:
 
@@ -88,47 +91,15 @@
 - `hyprland`: 
     - 没有检测到N卡: `hyprland`
     - 检测到N卡(不稳定, 建议查看wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
-- `waybar`: 已安装`waybar`可选择不安装,不再需要`waybar-hyprland-git`
-- `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: gtk主题
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: 文件管理器
 - `bluez` `bluez-utils` `blueman`: 蓝牙
-- `sddm-git`: 登录器, 主题使用`nautik1/sddm-theme-catppuccin-macchiato`修改版
-- `xdg-desktop-portal-hyprland`: 截图和屏幕共享需要
+- `sddm`: 登录器, 主题使用`nautik1/sddm-theme-catppuccin-macchiato`修改版
+- `xdg-desktop-portal-hyprland`: obs录屏和屏幕共享需要
 
 ## 自行安装:
 
-- `swayidle`: 空闲管理器(eg: 进入空闲状态时锁定屏幕/演示模式)
-- `checkupdates-with-aur`: 状态栏检查更新模块
 - `cronie`: 定时任务支持
-
-## ✨ Arch Linux 安装教程:
-- 中文教程: https://arch.icekylin.online/
-- 如果想用`system-boot`替换`grub`: https://wiki.archlinux.org/title/systemd-boot
-
-```sh
-sudo bootctl --path=/boot install
-sudo mkdir -p /boot/loader/entries
-sudo vim /boot/loader/entries/arch.conf
-===
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /intel-ucode.img
-initrd         /initramfs-linux.img
-options        root=LABEL=myArch rw rootflags=subvol=/@
-===
-
-yay -S systemd-boot-pacman-hook # 自动更新
-
-sudo vim /boot/loader/loader.conf
-===
-default  arch.conf
-timeout 0
-editor   no
-===
-```
-
-- 挂载`btrfs`时可选择强制压缩`compress-force=zstd`
-
+- `mcmojave-circle-icon-theme-git`: 安装非常慢, 改为手动安装
 
 
 ## ✨ NVIDIA-Hyprland 相关:
@@ -139,6 +110,3 @@ editor   no
 - 键盘布局(`kb_layout`)在`~/.config/hypr/hyprland.conf`中使用, 在安装脚本运行时可设置, 例如美式布局:`us`
 - 如果是法语键盘, 查看这个[issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
 
-### ✨ 已知问题:
-- [x] ~~SDDM 主题未更改成mac样式~~
-- [ ] fractional scaling breaks swww

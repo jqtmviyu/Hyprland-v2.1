@@ -1,11 +1,11 @@
 #!/bin/bash
 
-CONFIG="$HOME/.config/hypr/wofi/launchPad/config"
-STYLE="$HOME/.config/hypr/wofi/style.css"
-COLORS="$HOME/.config/hypr/wofi/colors"
+CONFIG=~/.config/hypr/wofi/launchPad/config
+STYLE=~/.config/hypr/wofi/style.css
+COLORS=~/.config/hypr/wofi/colors
 
 if [[ ! $(pidof wofi) ]]; then
-	wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE} --color ${COLORS}
+  wofi --show drun --prompt 'Search...' --conf ${CONFIG} --style ${STYLE} --color ${COLORS}
 else
-	pkill wofi
+  pkill wofi
 fi

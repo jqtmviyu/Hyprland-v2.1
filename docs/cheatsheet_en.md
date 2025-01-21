@@ -23,6 +23,8 @@
 * Super + L : Lock screen
 * Super + N : Previous window
 * Super + shift + N : The next window
+* Super + v : Window floating and centered
+* Super + space : Window floating cancel
 ------
 * Super + h/j/k/l : Move the focus in the window
 * Super + shift + h/j/k/l : Move the window position
@@ -40,7 +42,7 @@
 * `hyprland` setting directory: `~/.config/hypr/
 * Check software type(`wayland` or `x11`): `hyprctl clients`
 
-### No sound.
+### Sound not working
 
 ```sh
 # Check the sound card information
@@ -84,61 +86,4 @@ sudo vim /etc/environment
 ===
 MOZ_ENABLE_WAYLAND=1
 ===
-```
-
-## Common software
-
-### Chinese input method
-
-* install fcitx5-rime
-
-```sh
-yay -S fcitx5 fcitx5-gtk fcitx5-qt fcitx5-rime  fcitx5-configtool 
-```
-
-Deployment directory `~/.local/share/fcitx5/rime`
-
-* (Optional)[Theme](https://github.com/hosxy/Fcitx5-Material-Color)
-
-`yay -S fcitx5-material-color`
-
-### Key mapping
-
-`yay -S keyd-git`
-
-example: `capslock+h/j/k/l` mapping as arrow key 
-
-```sh
-# add Startup
-sudo systemctl enable keyd
-
-# configuration
-sudo vim /etc/keyd/default.conf
-
-===
-[ids]
-
-*
-
-[main]
-capslock = overload(capslock_layer, esc)
-
-[capslock_layer]
-esc = capslock
-
-h = left
-j = down
-k = up
-l = right
-
-u = pageup
-p = pagedown
-i = home
-o = end
-
-m = backspace
-===
-
-# start
-sudo systemctl start keyd
 ```

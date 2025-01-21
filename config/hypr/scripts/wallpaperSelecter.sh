@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # WALLPAPERS PATH
-DIR=$HOME/Pictures/wallpapers
+DIR=~/Pictures/wallpapers
 
 # Transition config (type swww img --help for more settings
 FPS=30
@@ -20,9 +20,9 @@ RANDOM_PIC=${PICS[$RANDOM % ${#PICS[@]}]}
 RANDOM_PIC_NAME="${#PICS[@]}. random"
 
 # WOFI STYLES
-CONFIG="$HOME/.config/hypr/wofi/config"
-STYLE="$HOME/.config/hypr/wofi/style.css"
-COLORS="$HOME/.config/hypr/wofi/colors"
+CONFIG=~/.config/hypr/wofi/config
+STYLE=~/.config/hypr/wofi/style.css
+COLORS=~/.config/hypr/wofi/colors
 
 # to check if swaybg is running
 
@@ -32,12 +32,12 @@ fi
 
 ## Wofi Command
 wofi_command="wofi --show dmenu \
-			--prompt choose...
-			--conf $CONFIG --style $STYLE --color $COLORS \
-			--width=$WIDTH% --height=$HEIGHT% \
-			--cache-file=/dev/null \
-			--hide-scroll --no-actions \
-			--matching=fuzzy"
+      --prompt choose...
+      --conf $CONFIG --style $STYLE --color $COLORS \
+      --width=$WIDTH% --height=$HEIGHT% \
+      --cache-file=/dev/null \
+      --hide-scroll --no-actions \
+      --matching=fuzzy"
 
 menu() {
   # Here we are looping in the PICS array that is composed of all images in the $DIR

@@ -1,141 +1,110 @@
 <br>
-<h3 align = "center"> Arch Hyprland Dotfiles and Script Installer </h3>
+<h3 align = "center"> Arch Hyprland Configuration Files and Installation Scripts</h3>
 <br>
 
-[Chinese Readme](README.md)|[cheatsheet](docs/cheatsheet_en.md) | [Github Repo](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)
+[中文说明](README.md)
 
+**[Thanks to the original author JaKooLit !!](https://github.com/jqtmviyu/Hyprland-v2.1/tree/personal)**
 
-**Thanks to the original author JaKooLit !!**
-If you are interested, join [DC](https://discord.gg/V2SJ92vbEN)
+> For use after minimal Arch installation  
+> Recommend using `system-boot` instead of `grub`  
+> Errors are normal as Hyprland updates frequently. Please check the wiki often.
 
-> Applicable to arch minimum implementation after installation
+## ✨ Differences from the original:
 
-## ✨ Differences:
+**Minor adjustments to better suit personal preferences**
 
-**Almost nothing**, just more suitable for myself.
+1. Added Chinese README
+1. Added clipboard manager
+1. Modified area screenshot script
+1. Kept only black and white macOS themes
+1. Removed ASUS driver parts from installation script
+1. Removed unwanted layouts
+1. Modified shortcuts
 
-1. Chinese README
-1. Add a clipboard manager
-1. Change the area screenshot script
-1. Using macos themes
-1. Delete the Asus driver installation part
-1. Delete the layout I don't like and adjust the dark/light style.
-1. Modify shortcut keys
+## Core Components:
 
-## Important components:
-
-- Wayland compositor: [`Hyprland`](https://github.com/hyprwm/Hyprland)
+- Wayland Compositor: [`Hyprland`](https://github.com/hyprwm/Hyprland)
  
 - Terminal: [`Foot`](https://github.com/r-c-f/foot)
  
-- Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
+- Status Bar: [`Waybar`](https://github.com/Alexays/Waybar)
  
-- Application launcher : [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
+- Launcher: [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
 
-- FIle Manager(Optional): [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
+- File Manager: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
 
 ## Screenshots:
-
-![systeminfo](/static/screenshots/systeminfo.png)
 
 ![light-mode](/static/screenshots/light-mode.png)
 
 ![dark-mode](/static/screenshots/dark-mode.png)
 
-## Themes:
--  gtk theme: `mojave-gtk-theme-git`
--  cursor: `mcmojave-cursors-git`
--  icons: `mcmojave-circle-icon-theme-git`
+![sddm](/static/screenshots/sddm.jpg)
 
-## Default installation:
-- `foot` `wofi`
+## Themes:
+-  Window: `mojave-gtk-theme-git`
+-  Cursor: `mcmojave-cursors-git`
+-  Icons: `mcmojave-circle-icon-theme-git`
+-  Login Screen: macOS-like
+
+## Default Installation:
+- `foot`: Lightweight terminal
+- `wofi`: Application launcher
 - `swaybg`: Wallpaper
-- `swwww`: Dynamic wallpaper
-- `nwg-look-bin`:  GTK3 Settings Editor(eg:Theme Settings)
-- `swaylock-effects`: Screen Lock
+- `swwww`: Dynamic wallpaper (supports webp/gif, not mp4)
+- `nwg-look-bin`: GTK3 settings editor
+- `hyprlock`: Screen locker
 - `wlroots`: Wayland compositor library
 - `wlogout`: Logout menu
-- `polkit-kde-agent`: Polkit authentication UI for Plasma
-- `mako`: notifications
-- `grim` `slurp`: Screenshot
-- `swappy`: Screenshot Editor
-- `wl-clipboard` `cliphist`: Clipboard Management
-- `brightnessctl`: brightness control for laptop(Desktop computers do not require)
-- `mpv`: Video Player
-- `ristretto`: Image View
-- `pamixer`: Command line volume control
-- `playerctl`: Command line playback control
-- `xorg-xwayland`: Compatible with x11 applications
+- `hyprpolkitagent`: Authentication agent
+- `mako`: Notifications
+- `grim` `slurp`: Screenshots
+- `swappy`: Screenshot editor
+- `wl-clipboard` `clipse`: Clipboard management
+- `brightnessctl`: Laptop brightness control (not needed for desktop)
+- `mpv`: Video player
+- `ristretto`: Image viewer
+- `pamixer`: CLI volume control
+- `playerctl`: Music control keybindings
+- `xorg-xwayland`: X11 app compatibility
 - `JetBrainsMono Nerd Font`: Status bar icon font
-- `nerd-fonts-sarasa-term`: Chinese fonts support(you can delete it from install.sh)
+- `nerd-fonts-sarasa-term`: CJK monospace font with icons
+- `mcmojave-cursors` `mojave-gtk-theme-git`: GTK themes
 - `pipewire` `pipewire-pulse` `pipewire-alsa` `wireplumber` `pavucontrol`: Audio related
-- `xdg-user-dirs`: Create common user folders
-- `btop`: Resources monitor
-- `network-manager-applet`: Network manager
-- `qt5ct`: Qt5 Configuration tools
+- `xdg-user-dirs`: Create common user directories
+- `btop`: Process viewer
+- `network-manager-applet`: Network management
+- `qt5ct`: Qt5 configuration tool
 - `gvfs`: Virtual filesystem
-- `gvfs-mtp`: Mobile phone mtp connection
-- `ffmpegthumbs`: FFmpeg-based thumbnail creator for video files
-- `curl`: Support for `weather.sh`
-- `jq`: Command-line JSON processor
-- `gtk4`: Support for Chinese input method on chrome/chromium 
+- `gvfs-mtp`: Phone MTP connection
+- `ffmpegthumbs`: Decoder
+- `curl`: Used by weather script
+- `jq`: JSON processor
+- `gtk4`: Chrome/Chromium CJK input compatibility
+- `hypridle`: Idle manager (e.g., screen lock/presentation mode on idle)
+- `checkupdates-with-aur`: Status bar update checker
 
-## Optional installation:
+## Optional Installation:
 
-- `yay` / `paru`: Must have one
+- `yay` / `paru`: One is required
 - `hyprland`: 
-    - Nvidia Graphics card detected: `hyprland`
-    - if not(Unstable, it is recommended to check the wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
-- `waybar`: if `waybar` has been installed, You can choose not
-- `mojave-gtk-theme-git` `mcmojave-circle-icon-theme-git` `mcmojave-cursors-git`: Gtk theme
+    - Without NVIDIA: `hyprland`
+    - With NVIDIA (unstable, check wiki): `hyprland-nvidia-git` `nvidia-dkms` `nvidia-settings` `nvidia-utils` `libva` `libva-nvidia-driver-git`
 - `thunar` `thunar-volman` `tumbler` `thunar-archive-plugin` `xarchiver`: File manager
-- `bluez` `bluez-utils` `blueman`: Blue tooth
-- `sddm-git`: Login manager
-- `xdg-desktop-portal-hyprland`: Screenshot and screen sharing needs(eg:obs)
+- `bluez` `bluez-utils` `blueman`: Bluetooth
+- `sddm`: Display manager, using modified version of `nautik1/sddm-theme-catppuccin-macchiato`
+- `xdg-desktop-portal-hyprland`: Required for OBS screen recording and screen sharing
 
-## Self-installation:
+## Manual Installation Required:
 
-- `swayidle`: Idle manager(eg: Lock screen/demonstration mode when entering the idle state)
-- `checkupdates-with-aur`: Status bar check update module
-- `cronie`: Timed task support
+- `cronie`: Cron job support
+- `mcmojave-circle-icon-theme-git`: Manual installation recommended due to slow installation
 
-## ✨ Arch linux installation tutorial:
-- Chinese: https://arch.icekylin.online/
-- if use `system-boot` replace `grub`: https://wiki.archlinux.org/title/systemd-boot
+## ✨ NVIDIA-Hyprland Notes:
+- Many variables are added but disabled in `~/.config/hypr/configs/exec.conf` for `OBS` recording compatibility. Please experiment.
+- Read [Hyprland-Wiki](https://wiki.hyprland.org/) for more help.
 
-```sh
-sudo bootctl --path=/boot install
-sudo mkdir -p /boot/loader/entries
-sudo vim /boot/loader/entries/arch.conf
-===
-title          Arch Linux
-linux          /vmlinuz-linux
-initrd         /intel-ucode.img
-initrd         /initramfs-linux.img
-options        root=LABEL=myArch rw rootflags=subvol=/@
-===
-
-yay -S systemd-boot-pacman-hook # Automatic update
-
-sudo vim /boot/loader/loader.conf
-===
-default  arch.conf
-timeout 0
-editor   no
-===
-```
-
-- When mounting `btrfs`, you can choose to force compression `compress-force=zstd`
-
-
-## ✨ NVIDIA-Hyprland :
-- To ensure proper recording with OBS, several variables have been added to `~/.config/hypr/configs/exec.conf`, but they have not been enabled. Please try enabling them and testing again.
-- You can also read the link for more assistance and information.[Hyprland-Wiki](https://wiki.hyprland.org/)
-
-## ✨ Others: 
-- Keyboard layout setting on `~/.config/hypr/hyprland.conf`, It can be set when the installation script is running, like American layout:`us`
-- If it's a French keyboard, check this.[issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
-
-### ✨ known-issues:
-- [x] SDDM theme has not been changed to mac style
-- [ ] fractional scaling breaks swww
+## ✨ Additional Notes: 
+- Keyboard layout (`kb_layout`) is set in `~/.config/hypr/hyprland.conf`, configurable during installation script (e.g., `us` for US layout)
+- For French keyboards, check this [issue](https://github.com/swaywm/sway/issues/1460?fbclid=IwAR1C8VcY_wWbGhXvT-5ApjJCQuJoJzhOVor6o5fdn0Nj1c6bD9JXoQAPQIg)
