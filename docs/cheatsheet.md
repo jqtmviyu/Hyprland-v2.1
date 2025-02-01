@@ -10,22 +10,25 @@
 * Super + shift + / : 弹窗, 你可以选择后快速查看快捷键等设置文件
 * Super + enter : foot 终端
 * Super + d : wofi 应用选择
-* Super + t : Thunar 文件管理器
+* Super + e : Thunar 文件管理器
 * Prtsc : 区域截图, 需要点下载图标才会保存在`~/Pictures/Screenshots/`
 * Super + Prtsc : 窗口截图
-* Super + alt + Prtsc : 全屏截图
+* Super + shift + Prtsc : 全屏截图
 * Super + v : 剪切板管理器
 * Super + shift + q : 杀死当前进程
 * Super + b : 关闭状态栏
 * Super + space : 平铺/浮动模式切换
 * Super + shift + space : 窗口对调
-* Super + tab : 上一个工作区间 
-* Super + F : 全屏
-* Super + L : 锁屏
-* Super + N : 上一个窗口
-* Super + shift + N : 下一个窗口
-* Super + v : 窗口浮动并居中
+* Super + tab : 上一个工作区间
+* Super + f : 全屏
+* Super + r : 聚焦上一个窗口(循环,跨工作区)
+* Super + n : 上一个窗口(同工作区)
+* Super + shift + n : 下一个窗口(同工作区)
+* Super + c : 窗口浮动并居中
 * Super + space : 窗口取消浮动
+* Super + g : 窗口分割方向切换
+* Super + x : 窗口水平分割
+* Super + y : 窗口垂直分割
 ------
 * Super + h/j/k/l : 在窗口中移动焦点
 * Super + shift + h/j/k/l : 移动窗口位置
@@ -37,6 +40,9 @@
 ------
 * Super + shift + u : 发送到特殊工作区
 * Super + u : 打开特殊工作区
+------
+* Super + f12 : 关闭键盘快捷键(eg: 在远程桌面或者虚拟机中需要)
+* Super + f11 : 恢复键盘快捷键
 
 ## 常见问题
 
@@ -126,8 +132,8 @@ sudo vim /etc/keyd/default.conf
 
 [main]
 capslock = overload(capslock_layer, esc)
-alt = layer(control)
-control = layer(alt)
+leftalt = leftmeta
+leftmeta = leftalt
 
 [capslock_layer]
 esc = capslock

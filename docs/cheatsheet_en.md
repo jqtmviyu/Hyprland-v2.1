@@ -10,21 +10,24 @@
 * Super + shift + / : Pop-up window, You can quickly view the shortcut keys and other settings files after you choose.
 * Super + enter : Foot terminal
 * Super + d : Application selection
-* Super + t : File manager
+* Super + e : File manager
 * Prtsc : Area screenshot, click the download icon to save on `~/Pictures/Screenshots/`
 * Super + Prtsc : Window screenshot
-* Super + alt + Prtsc : Full screenshot
+* Super + shift + Prtsc : Full screenshot
 * Super + v : Clipboard manager
 * Super + shift + q : Kill the current process
 * Super + b : Close the status bar
 * Super + space : Tile/floating mode switching
 * Super + shift + space : Window re-tuning
-* Super + F : Full screen
-* Super + L : Lock screen
-* Super + N : Previous window
-* Super + shift + N : The next window
-* Super + v : Window floating and centered
+* Super + f : Full screen
+* Super + r : Focus the previous window(cycle, cross-workspace)
+* Super + n : Previous window(same workspace)
+* Super + shift + n : The next window(same workspace)
+* Super + c : Window floating and centered
 * Super + space : Window floating cancel
+* Super + g : Window split direction switching
+* Super + x : split horizontal
+* Super + y : split vertical
 ------
 * Super + h/j/k/l : Move the focus in the window
 * Super + shift + h/j/k/l : Move the window position
@@ -36,6 +39,9 @@
 ------
 * Super + shift + u : Send to special workspace
 * Super + u : Open a special workspace
+------
+* Super + f12 : Quickly disable keybind for remote desktop app
+* Super + f11 : Quickly restore keybind for remote desktop app
 
 ## Common Questions
 
